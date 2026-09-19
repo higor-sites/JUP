@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ff6fae">
+<title>ZANNY Birthday 🎀</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="hearts"></div>
+<header class="topbar">
+  <div class="brand">ZANNY <span>Birthday</span> 🎀</div>
+  <button class="admin-open" onclick="openAdmin()">⚙️ Painel</button>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="sparkles">✦ ✧ ✦</div>
+    <p class="eyebrow">UM DIA MUITO ESPECIAL</p>
+    <h1>Feliz Aniversário,<br><span>Zanny! 💗</span></h1>
+    <p class="lead">Que seu dia seja cheio de carinho, sorrisos e momentos inesquecíveis.</p>
+    <div class="hero-actions">
+      <a href="#homenagem" class="btn primary">💌 Ver homenagem</a>
+      <button class="btn ghost" onclick="launchConfetti()">🎉 Comemorar</button>
+    </div>
+    <div class="cake">🎂</div>
+  </section>
+
+  <section id="homenagem" class="section message-section">
+    <div class="section-title">
+      <span>💌</span>
+      <div><small>COM TODO CARINHO</small><h2>Uma homenagem para você</h2></div>
+    </div>
+    <article class="message-card">
+      <div class="quote">“</div>
+      <p id="mainMessage">Hoje é um daqueles dias que merecem ser guardados no coração. Que essa nova fase venha com muita felicidade, amor, saúde, conquistas e motivos para sorrir. Feliz aniversário, Zanny! 💕</p>
+      <div class="signature">Com carinho, <strong id="signature">quem te ama muito 💗</strong></div>
+    </article>
+  </section>
+
+  <section class="section">
+    <div class="section-title">
+      <span>📸</span>
+      <div><small>MOMENTOS ESPECIAIS</small><h2>Nossas memórias</h2></div>
+    </div>
+    <div id="gallery" class="gallery"></div>
+    <div id="emptyGallery" class="empty" hidden>Adicione fotos pelo painel ⚙️</div>
+  </section>
+
+  <section class="section countdown-section">
+    <div class="count-card">
+      <div>
+        <small>O GRANDE DIA</small>
+        <h2>Vamos celebrar! 🎀</h2>
+        <p>Escolha a data do aniversário no painel para ativar a contagem.</p>
+      </div>
+      <div id="countdown" class="countdown">
+        <div><b>00</b><span>dias</span></div>
+        <div><b>00</b><span>horas</span></div>
+        <div><b>00</b><span>min</span></div>
+        <div><b>00</b><span>seg</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="brand">ZANNY Birthday 🎀</div>
+  <p>Feito com carinho para tornar esse aniversário inesquecível.</p>
+</footer>
+
+<div id="adminModal" class="modal" aria-hidden="true">
+  <div class="modal-box">
+    <button class="close" onclick="closeAdmin()">×</button>
+    <div id="loginView">
+      <div class="modal-icon">🔐</div>
+      <h2>Painel ZANNY</h2>
+      <p>Entre para personalizar a homenagem.</p>
+      <input id="adminPassword" type="password" placeholder="Senha do painel">
+      <button class="btn primary full" onclick="login()">Entrar</button>
+      <small class="hint">Senha inicial: <b>zanny2026</b></small>
+    </div>
+
+    <div id="panelView" hidden>
+      <div class="modal-icon">🎀</div>
+      <h2>Personalizar homenagem</h2>
+      <label>Mensagem principal</label>
+      <textarea id="messageInput" rows="5"></textarea>
+      <label>Assinatura</label>
+      <input id="signatureInput" type="text">
+      <label>Data do aniversário</label>
+      <input id="dateInput" type="date">
+
+      <label class="upload-label">Fotos da galeria</label>
+      <input id="photoInput" type="file" accept="image/*" multiple>
+      <p class="hint">As fotos ficam salvas neste navegador. Para um site online com fotos compartilhadas entre aparelhos, conecte Firebase.</p>
+
+      <div class="admin-actions">
+        <button class="btn primary" onclick="saveSettings()">💾 Salvar</button>
+        <button class="btn danger" onclick="clearPhotos()">🗑️ Limpar fotos</button>
+      </div>
+      <button class="logout" onclick="logout()">Sair do painel</button>
+    </div>
+  </div>
+</div>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <button>×</button><img id="lightboxImg" alt="Foto da homenagem">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
